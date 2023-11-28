@@ -13,6 +13,7 @@ namespace API
 
             builder.Services.AddControllers(config =>
             {
+                // global filter
                 config.Filters.Add(new GlobalFilter());
             });
 

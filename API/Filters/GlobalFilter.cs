@@ -6,12 +6,12 @@ namespace API.Filters
     {
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            Console.WriteLine("Filter OnActionExecuting");
+            Console.WriteLine("Global Filter OnActionExecuting");
         }
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            Console.WriteLine("Filter OnActionExecuted");
+            Console.WriteLine("Global Filter OnActionExecuted");
         }
     }
 }
