@@ -16,7 +16,7 @@ namespace API.Controllers
 
         [HttpGet(Name = "GetDrivers")]
         [ActionFilterAttribute($"{nameof(DriversController)}.{nameof(Get)}()")]
-        [AsyncActionFilterAttribute($"{nameof(DriversController)}.{nameof(Get)}()")]
+        [AsyncActionFilterAttribute($"{nameof(DriversController)}.{nameof(Get)}()", order: -10)]
         [SecondAsyncActionFilterAttribute($"{nameof(DriversController)}.{nameof(Get)}()")]
         public IActionResult Get()
         {

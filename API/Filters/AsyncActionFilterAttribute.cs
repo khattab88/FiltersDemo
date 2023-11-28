@@ -2,13 +2,19 @@
 
 namespace API.Filters
 {
-    public class AsyncActionFilterAttribute : Attribute, IAsyncActionFilter
+    public class AsyncActionFilterAttribute : Attribute, IAsyncActionFilter, IOrderedFilter
     {
         private readonly string _caller;
 
-        public AsyncActionFilterAttribute(string caller)
+        /// <summary>
+        /// the least the number, the higher the priority
+        /// </summary>
+        public int Order { get; set; }
+
+        public AsyncActionFilterAttribute(string caller, int order = 0)
         {
             _caller = caller;
+            Order = order;
         }
 
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
