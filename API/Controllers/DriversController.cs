@@ -6,7 +6,7 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    // [ActionFilterAttribute(nameof(DriversController))]
+    [ActionFilterAttribute(nameof(DriversController))]
     public class DriversController : ControllerBase
     {
         public static List<string> drivers = new List<string>() 
