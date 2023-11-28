@@ -16,8 +16,11 @@ namespace API.Controllers
 
         [HttpGet(Name = "GetDrivers")]
         [ActionFilterAttribute($"{nameof(DriversController)}.{nameof(Get)}()")]
+        [AsyncActionFilterAttribute($"{nameof(DriversController)}.{nameof(Get)}()")]
+        [SecondAsyncActionFilterAttribute($"{nameof(DriversController)}.{nameof(Get)}()")]
         public IActionResult Get()
         {
+            Console.WriteLine($"Controller: {nameof(WeatherForecastController)} - Action: {nameof(Get)}");
             return Ok(drivers);
         }
 
